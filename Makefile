@@ -1,6 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -ILibft -g
 NAME = push_swap.a
+EXEC = push_swap
 
 LIBFT = libft/
 UTILS = utils/
@@ -21,10 +22,13 @@ SRCS_PSWAP = algo.c
 
 OBJS = $(SRCS:.c=.o) $(SRCS_PSWAP:.c=.o) $(SRCS_UTILS:.c=.o)
 
-all: $(NAME)
+all: $(NAME) $(EXEC)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+
+$(EXEC): $(NAME)
+	$(CC) $(CFLAGS) $(SRCS_PSWAP) -o $(EXEC)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
