@@ -6,7 +6,7 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 23:33:56 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/19 05:19:57 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/19 20:47:30 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	push(t_list **first, t_list **second, char x)
 void	pa(t_list **a, t_list **b)
 {
 	ft_printf("pa\n");
-	push(&a, &b);
+	push(a, b);
 }
 
 void	pb(t_list **a, t_list **b)
 {
 	ft_printf("pa\n");
-	push(&b, &a);
+	push(b, a);
 }
