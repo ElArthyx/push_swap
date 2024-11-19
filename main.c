@@ -6,25 +6,39 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:43:12 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/19 04:09:06 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/19 05:33:47 by abosc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
+
 int	is_error_one_args(int argc, char **argv)
 {
-	if (argc < 2)
-		return (0);
-	return (0);
+	int		i;
+	char	**numbers;
+	
+	i = 0;
+	numbers = ft_split(argv[1], ' ');
+	while (numbers[i])
+	{
+		if (!ft_isdigit(numbers[i]))
+			return (0);
+		i++;
+	}
 }
 int	is_error_few_args(int argc, char **argv)
 {
-	if (argc < 2)
-		return (0);
+	int	i;
+
+	i = 0;
+	while (argv[i + 1])
+	{
+		if (!ft_isdigit(argv[i + 1]))
+			return (0);
+		i++;
+	}
 	return (0);
 }
-*/
 
 void	ft_lstprint(t_list *liste)
 {
@@ -43,12 +57,12 @@ void	ft_lstprint(t_list *liste)
 
 int	main(int argc, char **argv)
 {
-	// if (argc == 2)
-	// 	if (is_error_one_args(argc, argv))
-	// 		return (0);
-	// else
-	// 	if (is_error_few_args(argc, argv))
-	// 		return (0);
+	if (argc == 2)
+		if (!is_error_one_args(argc, argv))
+			return (0);
+	else
+		if (!is_error_few_args(argc, argv))
+			return (0);
 	t_list	*lst_a;
 	t_list	*lst_b;
 	int 	value;
