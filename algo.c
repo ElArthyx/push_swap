@@ -6,7 +6,7 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:16:05 by alegrix           #+#    #+#             */
-/*   Updated: 2024/11/20 00:05:56 by abosc            ###   ########.fr       */
+/*   Updated: 2024/11/20 00:09:49 by abosc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 void	algo(t_list **a, t_list **b)
 {
+	int	mid;
+	int	n;
+	int	offset;
+	int	start;
+	int	end;
+
+	n = nvalue(ft_lstsize(*a));
+	mid = ft_lstsize(*a) / 2;
+	offset = ft_lstsize(*a) / n;
+	start = mid - offset;
+	end = mid + offset;
 	while (ft_lstsize(*a) > 1)
 	{
 		if (fst_sup_sec(*a) == 1)
@@ -31,3 +42,13 @@ void	algo(t_list **a, t_list **b)
 			swap(a, 'a');
 	}
 }
+
+int	nvalue(int lst_size)
+{
+	if (lst_size <= 10)
+		return (10);
+	else if (lst_size <= 150)
+		return (8);
+	else
+		return (18);
+

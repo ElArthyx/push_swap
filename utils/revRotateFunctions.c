@@ -6,21 +6,31 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 00:24:41 by alegrix           #+#    #+#             */
-/*   Updated: 2024/11/19 21:22:00 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/19 23:40:05 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+t_list	*second_to_last(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next->next)
+		lst = lst->next;
+	return (lst);
+}
+
 void	reverse_rotate(t_list **lst)
 {
-	t_list	*new;
+	t_list	*temp;
 	
 	if (ft_lstsize(*lst) <= 1)
 		return ;
-	new = ft_lstnew((*lst)->content);
-	ft_lstadd_front(lst, new);
-	free(ft_lstlast(*lst));
+	temp = second_to_last(*lst);
+	temp->next->next = *lst;
+	*lst = temp->next ;
+	temp->next = NULL ;
 }
 
 void	rrr(t_list **lst_a, t_list **lst_b)
@@ -41,4 +51,3 @@ void    rrb(t_list **lst_b)
 	ft_printf("rrb\n");
 	reverse_rotate(lst_b);
 }
-

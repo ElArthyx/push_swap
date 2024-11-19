@@ -6,7 +6,7 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 00:24:28 by alegrix           #+#    #+#             */
-/*   Updated: 2024/11/19 21:18:31 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/20 00:04:44 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	rotate(t_list **lst)
 {
-	t_list	*new;
+	t_list	*temp;
 
 	if (ft_lstsize(*lst) <= 1)
 		return ;
-	new = ft_lstnew((*lst)->content);
-	free(*lst);
-	ft_lstadd_back(lst, new);
+	temp = (*lst)->next;
+	ft_lstlast(*lst)->next = *lst;
+	(*lst)->next = NULL;
+	*lst = temp;
 }
 
 void	rr(t_list **first, t_list **second)
