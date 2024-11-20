@@ -6,7 +6,7 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 23:24:04 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/19 21:54:40 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/20 01:27:16 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	swap(t_list **lst)
 
 void	ss(t_list **lst_a, t_list **lst_b)
 {
-	swap(lst_a, 'x');
-	swap(lst_b, 'x');
+	swap(lst_a);
+	swap(lst_b);
 	ft_printf("ss\n");
 }
 

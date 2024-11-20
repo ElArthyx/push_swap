@@ -6,7 +6,7 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 00:24:28 by alegrix           #+#    #+#             */
-/*   Updated: 2024/11/20 00:04:44 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/20 01:27:48 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	rotate(t_list **lst)
 void	rr(t_list **first, t_list **second)
 {
 	ft_printf("rr\n");
-	rotate(first, 'x');
-	rotate(second, 'x');
+	rotate(first);
+	rotate(second);
 }
 
 void	ra(t_list **lst_a)

@@ -6,7 +6,7 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:21:56 by alegrix           #+#    #+#             */
-/*   Updated: 2024/11/18 22:44:30 by abosc            ###   ########.fr       */
+/*   Updated: 2024/11/20 01:31:20 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,15 @@ int	sec_sup_thd(t_list *lst)
 	if (second->content > third->content)
 		return (1);
 	return (0);
+}
+
+int	a_is_sorted(t_list *lst)
+{
+	while (lst->next)
+	{
+		if (lst->content > lst->next->content)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
 }
