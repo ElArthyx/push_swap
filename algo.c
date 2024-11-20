@@ -6,13 +6,13 @@
 /*   By: alegrix <alegrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:16:05 by alegrix           #+#    #+#             */
-/*   Updated: 2024/11/20 02:39:27 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/20 04:58:23 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algo(t_list **a, t_list **b)
+void	small_stack(t_list **a, t_list **b)
 {
 	while (a_is_sorted(*a) == 0)
 	{
@@ -23,7 +23,6 @@ void	algo(t_list **a, t_list **b)
 			pb(a, b);
 			if (fst_sup_sec(*b) == 0)
 				sb(b);
-			ft_lstprint(*a);
 		}
 		while (ft_lstsize(*b) > 0)
 		{

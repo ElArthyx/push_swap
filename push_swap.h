@@ -6,7 +6,7 @@
 /*   By: alegrix <alegrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 23:37:36 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/20 02:40:10 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/20 04:57:41 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	sb(t_list **lst);
 int		check_in_int(char *char_num);
 int		check_doublons(char	**args);
 int		a_is_sorted(t_list *a);
-
+void	small_stack(t_list **a, t_list **b);
 #endif
