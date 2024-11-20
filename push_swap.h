@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alegrix <alegrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 23:37:36 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/20 00:37:36 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/20 02:40:10 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,8 @@ void	ra(t_list **lst_a);
 void	rb(t_list **lst_b);
 void	sa(t_list **lst);
 void	sb(t_list **lst);
+int		check_in_int(char *char_num);
+int		check_doublons(char	**args);
+int		a_is_sorted(t_list *a);
 
 #endif

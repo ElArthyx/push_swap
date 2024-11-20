@@ -6,7 +6,7 @@
 /*   By: alegrix <alegrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:16:05 by alegrix           #+#    #+#             */
-/*   Updated: 2024/11/20 01:34:37 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/20 02:39:27 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 
 void	algo(t_list **a, t_list **b)
 {
-	while (ft_lstsize(*a) > 1)
+	while (a_is_sorted(*a) == 0)
 	{
-		if (fst_sup_sec(*a) == 1)
-			sa(a);
-		pb(a, b);
-		if (fst_sup_sec(*b) == 0)
-			sb(b);
-	}
-	while (ft_lstsize(*b) > 0)
-	{
-		if (fst_sup_sec(*b) == 0)
-			sb(b);
-		pa(b, a);
-		if (fst_sup_sec(*a) == 1)
-			sa(a);
+		while (ft_lstsize(*a) > 1)
+		{
+			if (fst_sup_sec(*a) == 1)
+				sa(a);
+			pb(a, b);
+			if (fst_sup_sec(*b) == 0)
+				sb(b);
+			ft_lstprint(*a);
+		}
+		while (ft_lstsize(*b) > 0)
+		{
+			if (fst_sup_sec(*b) == 0)
+				sb(b);
+			pa(a, b);
+			if (fst_sup_sec(*a) == 1)
+				sa(a);
+		}
 	}
 }
 

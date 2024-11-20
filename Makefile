@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -ILibft -g
+CFLAGS = -Wall -Wextra -Werror -g
 NAME = push_swap.a
 EXEC = push_swap
 
@@ -16,19 +16,19 @@ SRCS = $(addprefix $(LIBFT), ft_isalnum.c ft_isalpha.c ft_isascii.c\
 	ft_lstsize_bonus.c ft_printf.c ft_print_hex.c ft_print_numbers.c ft_print_pointers.c ft_print_unsigned.c)
 
 
-SRCS_UTILS = $(addprefix $(UTILS), swapFunctions.c rotateFunctions.c revRotateFunctions.c pushFunctions.c cmpFunctions.c)
+SRCS_UTILS = $(addprefix $(UTILS), swapFunctions.c rotateFunctions.c revRotateFunctions.c pushFunctions.c cmpFunctions.c checkers.c)
 
-SRCS_PSWAP = algo.c
+SRCS_PSWAP = main.c algo.c
 
 OBJS = $(SRCS:.c=.o) $(SRCS_PSWAP:.c=.o) $(SRCS_UTILS:.c=.o)
 
-all: $(NAME) $(EXEC)
+all: $(NAME) #$(EXEC)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 $(EXEC): $(NAME)
-	$(CC) $(CFLAGS) $(SRCS_PSWAP) -o $(EXEC)
+	$(CC) $(CFLAGS) push_swap.a main.c -o $(EXEC)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
