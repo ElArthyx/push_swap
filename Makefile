@@ -16,22 +16,17 @@ SRCS = $(addprefix $(LIBFT), ft_isalnum.c ft_isalpha.c ft_isascii.c\
 	ft_lstsize_bonus.c ft_printf.c ft_print_hex.c ft_print_numbers.c ft_print_pointers.c ft_print_unsigned.c)
 
 
-SRCS_UTILS = $(addprefix $(UTILS), swapFunctions.c rotateFunctions.c revRotateFunctions.c pushFunctions.c cmpFunctions.c checkers.c)
+SRCS_UTILS = $(addprefix $(UTILS), swapFunctions.c rotateFunctions.c revRotateFunctions.c pushFunctions.c cmpFunctions.c checkers.c indexage.c)
 
 SRCS_PSWAP = main.c algo.c
 
 OBJS = $(SRCS:.c=.o) $(SRCS_PSWAP:.c=.o) $(SRCS_UTILS:.c=.o)
 
-all: $(NAME) #$(EXEC)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-
-$(EXEC): $(NAME)
-	$(CC) $(CFLAGS) push_swap.a main.c -o $(EXEC)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(NAME) -o push_swap
 
 clean:
 	rm -f $(OBJS)

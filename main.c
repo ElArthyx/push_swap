@@ -6,7 +6,7 @@
 /*   By: alegrix <alegrix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:43:12 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/20 04:56:52 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/30 00:48:55 by alegrix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_lstprint(t_list *liste)
 	tmp = liste;
 	while (tmp != NULL)
 	{
-		s = tmp->content;
+		s = tmp->index;
 		ft_printf("%d -> ", s);
 		tmp = tmp->next;
 	}
@@ -98,11 +98,13 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&lst_a, ft_lstnew(value));
 		i++;
 	}
+	ft_lstprint(lst_b);
 	ft_lstprint(lst_a);
-	ft_lstprint(lst_b);	
-	small_stack(&lst_a, &lst_b);
+	//ft_lstprint(lst_b);	
+	//small_stack(&lst_a, &lst_b);
+	indexage(&lst_a);
 	ft_printf("\ntest finale :  ");
 	ft_lstprint(lst_a);
-	ft_lstprint(lst_b);
+	//ft_lstprint(lst_b);
 	return (0);
 }
