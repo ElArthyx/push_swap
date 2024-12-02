@@ -6,7 +6,7 @@
 /*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:43:12 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/26 00:33:01 by abosc            ###   ########.fr       */
+/*   Updated: 2024/12/02 17:16:41 by abosc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,13 @@ int	main(int argc, char **argv)
 		ft_lstadd_back(&lst_a, ft_lstnew(value));
 		i++;
 	}
+	ft_lstprint(lst_b);
 	ft_lstprint(lst_a);
-	ft_lstprint(lst_b);	
-	small_stack(&lst_a, &lst_b);
+	//ft_lstprint(lst_b);	
+	//small_stack(&lst_a, &lst_b);
+	indexage(&lst_a);
 	ft_printf("\ntest finale :  ");
 	ft_lstprint(lst_a);
-	ft_lstprint(lst_b);
+	//ft_lstprint(lst_b);
 	return (0);
 }
