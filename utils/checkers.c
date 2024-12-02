@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegrix <alegrix@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 23:31:58 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/20 01:49:03 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/25 21:44:50 by abosc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../push_swap.h"
+#include "../push_swap.h"
 
 // int	check_in_int(char *char_num)
 // {

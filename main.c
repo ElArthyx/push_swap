@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alegrix <alegrix@student.42.fr>            +#+  +:+       +#+        */
+/*   By: abosc <abosc@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 01:43:12 by abosc             #+#    #+#             */
-/*   Updated: 2024/11/20 04:56:52 by alegrix          ###   ########.fr       */
+/*   Updated: 2024/11/26 00:33:01 by abosc            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
+
+char *error_message;
+
 int	is_error_one_args(int argc, char **argv)
 {
 	int		i;
@@ -26,7 +28,7 @@ int	is_error_one_args(int argc, char **argv)
 	}
 	while (numbers[i])
 	{
-		if (!ft_isdigit(numbers[i]) || !check_in_int(numbers[i]))
+		if (!ft_isdigit(*numbers[i]) || !check_in_int(numbers[i]))
 		{
 			ft_printf("Erreur\n");
 			return (0);
@@ -56,7 +58,7 @@ int	is_error_few_args(int argc, char **argv)
 	}
 	return (0);
 }
-*/
+
 // TODO: fonction temp
 void	ft_lstprint(t_list *liste)
 {
@@ -67,23 +69,25 @@ void	ft_lstprint(t_list *liste)
 	while (tmp != NULL)
 	{
 		s = tmp->content;
-		ft_printf("%d -> ", s);
+		ft_printf("%d", s);
+		if (tmp->content)
+			ft_printf( "-> ");
 		tmp = tmp->next;
 	}
 	ft_printf("\n");
 }
 
 int	main(int argc, char **argv)
-{/*
-	 if (argc == 1)
+{
+	if (argc == 1)
 	 	return (0);
-	 if (argc == 2)
+	if (argc == 2)
 	 	if (!is_error_one_args(argc, argv))
 	 		return (0);
-	 else
-	 	if (!is_error_few_args(argc, argv))
+	else
+		if (!is_error_few_args(argc, argv))
 	 		return (0);
-	*/
+
 	t_list	*lst_a;
 	t_list	*lst_b;
 	int 	value;
